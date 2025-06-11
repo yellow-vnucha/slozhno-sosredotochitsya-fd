@@ -20,11 +20,7 @@
   --shadow-color: #ff0070;
 }
 
-.theme-light .lamp::before {
-  display: none;
-}
-
-.theme-light .lamp::after {
+.theme-light .lamp {
   display: none;
 }
 
@@ -41,11 +37,7 @@
     --shadow-color: #ff0070;
   }
 
- .theme-light .lamp::before {
-  display: none;
-}
-
-.theme-light .lamp::after {
-  display: none;
-}
+  .lamp {
+    display: none;
+  }
 }

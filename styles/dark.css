@@ -23,3 +23,7 @@
 .theme-dark .page {
   --bg-cover: url(../images/cover-image-dark.png);
 }
+
+.theme-dark .lamp {
+  display: block;
+}
