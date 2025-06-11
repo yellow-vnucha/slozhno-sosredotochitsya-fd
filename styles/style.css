@@ -4,6 +4,7 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--font-family), sans-serif;
   background-image: var(--bg-cover);
+  background-color: var(--background-color);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,6 +27,7 @@
 .lamp {
   /* REC */
   position: relative;
+  display: block;
 }
 
 .lamp::before {
@@ -51,7 +53,6 @@
 }
 
 .decorated-zone {
-  block-size: 100%;
   position: relative;
 }
 
@@ -113,9 +114,12 @@
   line-height: 130%;
 }
 
+.header__paragraph {
+  height: min-content;
+}
+
 .header__subtitle {
   color: var(--color-subtitle);
-  height: min-content;
 }
 
 .title-decor {
@@ -124,13 +128,14 @@
 
 .header__theme-menu-button {
   background-color: transparent;
-  border: none;
   color: var(--decorate-color);
   font-size: var(--fs-main-text, 18px);
   text-transform: lowercase;
   min-width: 70px;
   min-height: 26px;
   line-height: 100%;
+  appearance: none;
+  border: 1px solid transparent;
 }
 
 .header__theme-menu-button_active {
@@ -151,10 +156,13 @@
   border-bottom: 1px solid var(--decorate-color);
 }
 
+.header__theme-menu-button:active {
+  outline: 1px solid var(--decorate-color);
+}
+
 /*main*/
 
 .content {
-  padding: var(--padding-main);
   margin-block-end: 30px;
 }
 
@@ -170,6 +178,7 @@
   margin-block-end: 10px;
   color: var(--color-subtitle);
 }
+
 .section__text {
   margin-block-end: 20px;
   font-size: var(--fs-main-text, 18px);
@@ -182,7 +191,8 @@
 }
 
 .content__section {
-  margin-block-end: 49px;
+  padding: var(--padding-main);
+  margin-block-end: /*49px;*/10px;
 }
 
 .accent_link {
@@ -210,6 +220,10 @@
 }
 
 .gallery {
+  padding: var(--padding-main);
+}
+
+.gallery__card {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: var(--gap, 10px);
@@ -255,7 +269,7 @@
     padding-top: var(--padding-main);
     padding-right: var(--padding-main);
     padding-left: 0;
-    row-gap: 164px;
+    row-gap: 162px;
     column-gap: 20px;
     margin-block-end: var(--margin-block-end);
   }
@@ -281,16 +295,15 @@
 
   .title {
     grid-column: 1 / 3;
-    padding-block-start: 10px;
+    padding-block-start: 12px;
     margin-block-end: 0;
   }
 
-  .header__subtitle {
+  .header__paragraph {
     grid-column: 2;
   }
 
   .content {
-    padding-inline: var(--padding-main);
     margin-block-end: var(--margin-block-end);
   }
 
@@ -298,14 +311,15 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
-    margin-block-end: 59px;
+    margin-block-end: 20px;
+    padding-inline: var(--padding-main);
   }
 
   .section__subtitle-description-focus {
     grid-column: 1;
   }
 
-  .description-focus__text {
+  .description-focus-card {
     grid-column: 2;
   }
 
@@ -321,11 +335,11 @@
     grid-column: 1;
   }
 
-  .description-сoncentration-text {
+  .description-сoncentration-card {
     grid-column: 2;
   }
 
-  .gallery {
+  .gallery__card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, min-content);
@@ -383,7 +397,7 @@
     padding-block-start: 0;
     justify-self: center;
     align-self: start;
-    margin-bottom: 16.5rem;
+    margin-bottom: 16.4rem;
   }
 
   .header__theme-menu-list {
@@ -397,7 +411,7 @@
     margin-block-end: 114px;
   }
 
-  .header__subtitle {
+  .header__paragraph {
     display: inline-block;
     float: right;
     inline-size: calc(50% - 10px);
@@ -407,19 +421,19 @@
 
   .content__section {
     column-gap: var(--gap, 10px);
-    margin-block-end: 60px;
+    margin-block-end: 20px;
+  }
+
+  .content__section-desline {
+    padding-inline-start: var(--padding-main);
+    padding-inline-end: 19px;
   }
 
   .description-desline-text {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  .description-desline-text-item {
-    min-width: 315px;
-    max-width: calc(100% / 3 - 20px);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(315px, calc(100% / 3 - 20px)));
+    justify-content: center;
+    column-gap: 20px;
   }
 
   .footer {

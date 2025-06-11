@@ -10,6 +10,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --bg-cover: url(../images/cover-image-dark.png);
+  --background-color: #000028;
   --color-main-text: #f1b2ce;
   --color-subtitle: #000028;
   --color-title: #ff0070;
@@ -20,10 +21,11 @@
   --shadow-color: #ff0070;
 }
 
-.theme-dark .page {
-  --bg-cover: url(../images/cover-image-dark.png);
+.theme-dark .lamp::before {
+  color: var(--decorate-color);
 }
 
-.theme-dark .lamp {
-  display: block;
+.theme-dark .lamp::after {
+  background-color: var(--decorate-color);
+  box-shadow: 0px 0px 4px 2px var(--decorate-color);
 }
