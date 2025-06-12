@@ -168,9 +168,6 @@
 
 .section__subtitle {
   color: var(--color-title);
-  font-weight: var(--fw-title);
-  font-size: var(--fs-main-text, 18px);
-  line-height: 130%;
   margin-block-end: 20px;
 }
 
@@ -192,7 +189,7 @@
 
 .content__section {
   padding: var(--padding-main);
-  margin-block-end: /*49px;*/10px;
+  margin-block-end: /*49px;*/ 10px;
 }
 
 .accent_link {
@@ -220,14 +217,11 @@
 }
 
 .gallery {
-  padding: var(--padding-main);
-}
-
-.gallery__card {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: var(--gap, 10px);
   min-block-size: 355px;
+  padding: var(--padding-main);
 }
 
 .gallery__image-item {
@@ -315,31 +309,19 @@
     padding-inline: var(--padding-main);
   }
 
-  .section__subtitle-description-focus {
+  .section__subtitle {
     grid-column: 1;
   }
 
-  .description-focus-card {
+  .description-card {
     grid-column: 2;
-  }
-
-  .section__subtitle-description-desline {
-    grid-column: 1;
   }
 
   .description-desline-text {
     grid-column: 1 / 4;
   }
 
-  .section__subtitle-description-сoncentration {
-    grid-column: 1;
-  }
-
-  .description-сoncentration-card {
-    grid-column: 2;
-  }
-
-  .gallery__card {
+  .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, min-content);
